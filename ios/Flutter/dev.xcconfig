@@ -1,0 +1,9 @@
+// Development environment xcconfig.
+// Included by Debug-dev and Release-dev build configurations.
+// Overrides the bundle identifier for the dev flavor.
+#include "Generated.xcconfig"
+#include "Flutter/Debug.xcconfig"
+
+BUNDLE_ID_SUFFIX = .dev
+PRODUCT_BUNDLE_IDENTIFIER = com.starterkit.flutterStarterKit.dev
+FLUTTER_BUILD_NAME = 1.0.0

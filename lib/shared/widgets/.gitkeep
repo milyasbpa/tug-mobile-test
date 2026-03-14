@@ -1,0 +1,4 @@
+// Folder ini berisi reusable UI components yang dipakai lintas feature.
+// Contoh: AppButton, AppTextField, AppDialog, AppLoading, dll.
+//
+// TODO(step-11): Buat komponen-komponen ini di Step 11 (Theming & Design System)

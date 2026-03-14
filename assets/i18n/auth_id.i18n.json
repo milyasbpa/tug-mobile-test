@@ -1,0 +1,31 @@
+{
+  "loginTitle": "Selamat Datang",
+  "loginSubtitle": "Masuk untuk melanjutkan",
+  "loginButton": "Masuk",
+  "loginLoading": "Sedang masuk…",
+  "registerTitle": "Buat Akun",
+  "registerSubtitle": "Isi data di bawah ini untuk memulai",
+  "registerButton": "Buat Akun",
+  "registerLoading": "Membuat akun…",
+  "emailLabel": "Email",
+  "emailHint": "anda@contoh.com",
+  "passwordLabel": "Kata Sandi",
+  "passwordHint": "········",
+  "nameLabel": "Nama Lengkap",
+  "nameHint": "Budi Santoso",
+  "dontHaveAccount": "Belum punya akun?",
+  "alreadyHaveAccount": "Sudah punya akun?",
+  "registerLink": "Daftar",
+  "loginLink": "Masuk",
+  "validation": {
+    "emailRequired": "Email wajib diisi",
+    "emailInvalid": "Masukkan alamat email yang valid",
+    "passwordRequired": "Kata sandi wajib diisi",
+    "passwordTooShort": "Kata sandi minimal 6 karakter",
+    "nameRequired": "Nama lengkap wajib diisi"
+  },
+  "logoutButton": "Keluar",
+  "logoutConfirmTitle": "Keluar",
+  "logoutConfirmMessage": "Apakah Anda yakin ingin keluar?",
+  "devTestCredentialsHint": "Mode dev: ketuk untuk mengisi kredensial uji"
+}

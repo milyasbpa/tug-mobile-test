@@ -1,0 +1,8 @@
+// Staging environment xcconfig.
+// Included by Debug-staging and Release-staging build configurations.
+#include "Generated.xcconfig"
+#include "Flutter/Debug.xcconfig"
+
+BUNDLE_ID_SUFFIX = .staging
+PRODUCT_BUNDLE_IDENTIFIER = com.starterkit.flutterStarterKit.staging
+FLUTTER_BUILD_NAME = 1.0.0

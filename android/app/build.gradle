@@ -1,0 +1,90 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+android {
+    namespace "com.starterkit.flutter_starter_kit"
+    compileSdkVersion flutter.compileSdkVersion
+    ndkVersion flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        // Base application ID — each flavor overrides this with its own ID.
+        applicationId "com.starterkit.flutter_starter_kit"
+        minSdkVersion 21
+        targetSdkVersion flutter.targetSdkVersion
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+    }
+
+    // Each flavor maps to one environment (dev / staging / production).
+    // flutter run --flavor dev  →  com.starterkit.flutter_starter_kit.dev
+    // flutter run --flavor production  →  com.starterkit.flutter_starter_kit
+    flavorDimensions "env"
+
+    productFlavors {
+        dev {
+            dimension "env"
+            applicationId "com.starterkit.flutter_starter_kit.dev"
+            versionNameSuffix "-dev"
+            resValue "string", "app_name", "StarterKit Dev"
+        }
+        staging {
+            dimension "env"
+            applicationId "com.starterkit.flutter_starter_kit.staging"
+            versionNameSuffix "-staging"
+            resValue "string", "app_name", "StarterKit Staging"
+        }
+        production {
+            dimension "env"
+            applicationId "com.starterkit.flutter_starter_kit"
+            resValue "string", "app_name", "StarterKit"
+        }
+    }
+
+    buildTypes {
+        release {
+            // TODO: Replace with proper signing config before shipping (Step 18).
+            // Using debug keys for now so `flutter run --release` works locally.
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {}

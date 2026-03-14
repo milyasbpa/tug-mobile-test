@@ -1,0 +1,7 @@
+// Production environment xcconfig.
+// Included by Debug-production and Release-production build configurations.
+#include "Generated.xcconfig"
+#include "Flutter/Release.xcconfig"
+
+PRODUCT_BUNDLE_IDENTIFIER = com.starterkit.flutterStarterKit
+FLUTTER_BUILD_NAME = 1.0.0

@@ -1,0 +1,31 @@
+{
+  "loginTitle": "Welcome Back",
+  "loginSubtitle": "Sign in to continue",
+  "loginButton": "Sign In",
+  "loginLoading": "Signing in…",
+  "registerTitle": "Create Account",
+  "registerSubtitle": "Fill in the details below to get started",
+  "registerButton": "Create Account",
+  "registerLoading": "Creating account…",
+  "emailLabel": "Email",
+  "emailHint": "you@example.com",
+  "passwordLabel": "Password",
+  "passwordHint": "········",
+  "nameLabel": "Full Name",
+  "nameHint": "John Doe",
+  "dontHaveAccount": "Don't have an account?",
+  "alreadyHaveAccount": "Already have an account?",
+  "registerLink": "Register",
+  "loginLink": "Sign In",
+  "validation": {
+    "emailRequired": "Email is required",
+    "emailInvalid": "Enter a valid email address",
+    "passwordRequired": "Password is required",
+    "passwordTooShort": "Password must be at least 6 characters",
+    "nameRequired": "Full name is required"
+  },
+  "logoutButton": "Sign Out",
+  "logoutConfirmTitle": "Sign Out",
+  "logoutConfirmMessage": "Are you sure you want to sign out?",
+  "devTestCredentialsHint": "Dev mode: tap to fill test credentials"
+}

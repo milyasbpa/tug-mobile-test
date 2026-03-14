@@ -1,0 +1,19 @@
+# lefthook.yml — Git hooks configuration
+#
+# Runs automatically on every `git commit` (pre-commit hook).
+# Both commands run in parallel for speed.
+#
+# To install hooks after cloning: lefthook install
+# To skip hooks temporarily:      LEFTHOOK=0 git commit -m "..."
+# To run manually:                 lefthook run pre-commit
+
+pre-commit:
+  parallel: true
+  commands:
+    format:
+      run: dart format --set-exit-if-changed lib/ test/
+      fail_text: "Run 'dart format lib/ test/' to fix formatting"
+
+    analyze:
+      run: flutter analyze --fatal-infos
+      fail_text: "Fix all analysis issues before committing"

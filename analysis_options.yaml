@@ -1,0 +1,44 @@
+# Dart/Flutter static analysis configuration.
+#
+# Uses very_good_analysis as the base — the strictest and most widely adopted
+# production lint rule set in the Flutter community (by Very Good Ventures).
+#
+# Rules below either extend or override the base config for this project.
+# Full rule list: https://dart.dev/lints
+
+include: package:very_good_analysis/analysis_options.yaml
+
+analyzer:
+  exclude:
+    # Generated files — do not analyze
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/*.gen.dart"
+    - "lib/l10n/app_localizations*.dart"
+
+linter:
+  rules:
+    # Enforce single quotes throughout the codebase for consistency.
+    prefer_single_quotes: true
+
+    # All imports must use package: URIs (no relative imports).
+    # Prevents ambiguous import paths in larger codebases.
+    always_use_package_imports: true
+
+    # ── Rules disabled for app-level code ───────────────────────────────────
+    # public_member_api_docs is required for published packages/libraries.
+    # For application code, full API docs on every public member adds noise
+    # without benefit. Teams can re-enable this for public packages.
+    public_member_api_docs: false
+
+    # very_good_analysis enforces 80-char lines (suited for pub.dev packages).
+    # Modern app codebases typically use 120 chars. IDE formatters handle this.
+    lines_longer_than_80_chars: false
+
+    # Sorting pub dependencies alphabetically conflicts with the convention of
+    # listing sdk: flutter dependencies first. Disable to avoid false positives.
+    sort_pub_dependencies: false
+
+    # Suppresses warnings when doc comments reference symbols that don't exist
+    # yet (e.g., future classes like ApiConstants, AssetConstants).
+    comment_references: false

@@ -1,0 +1,14 @@
+{
+  "appName": "Flutter Starter Kit",
+  "ok": "OK",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "retry": "Retry",
+  "loading": "Loading…",
+  "save": "Save",
+  "close": "Close",
+  "error": "Something went wrong",
+  "errorNetwork": "No internet connection. Please check your network and try again.",
+  "errorServer": "Server error. Please try again later.",
+  "emptyState": "Nothing here yet"
+}

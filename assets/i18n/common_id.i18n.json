@@ -1,0 +1,14 @@
+{
+  "appName": "Flutter Starter Kit",
+  "ok": "OK",
+  "cancel": "Batal",
+  "confirm": "Konfirmasi",
+  "retry": "Coba Lagi",
+  "loading": "Memuat…",
+  "save": "Simpan",
+  "close": "Tutup",
+  "error": "Terjadi kesalahan",
+  "errorNetwork": "Tidak ada koneksi internet. Periksa jaringan Anda dan coba lagi.",
+  "errorServer": "Terjadi kesalahan pada server. Silakan coba beberapa saat lagi.",
+  "emptyState": "Belum ada data"
+}

@@ -1,0 +1,2 @@
+// Folder ini berisi shared models yang dipakai lintas feature.
+// Contoh: PaginationModel, ApiResponse wrapper, dll.

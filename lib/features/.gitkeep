@@ -1,0 +1,12 @@
+// This folder contains feature modules following Clean Architecture.
+// Each feature has the structure:
+//
+// features/
+// └── [feature_name]/
+//     ├── data/
+//     │   ├── datasources/
+//     │   ├── models/
+//     │   └── rep//     │   └── rep//     │   └── rep//     │   └─?  // TODO(step-5): Implement get_it   EOF
+
+cat > lib/core/network/.gitkeep << 'EOF'
+// TODO(step-/ //   // TODO(step-/ //   // TODO(step-/ //   // TODO(step-/ //   // TODO(step-/ //   // TODO(step-/ //   // TODO(step-/ //   // TODO(step-/ //   // TODO(step-/ //   // TODO(step-/ // mod// TODO(step-/ //   // TODO(step-/ //   // TODO(step-/ //   // TODO(step-/ //   // TODO(step-/ //   // TODO(step-/Mod// TODO(step-/ //   // TODO(step-/ //   // TODO(step-/ //   // TODO(step-/ //   // TODO(step-/ //   // TODO(step-/ //   // TODsed acr// TODO(step-/ //   // TODO(step-/ //   // TODO(step-/ //   // TODO(step-/ //   // TODO(step-/ //   // TODO(s Build these components in Step 11 (Theming & Design System)
