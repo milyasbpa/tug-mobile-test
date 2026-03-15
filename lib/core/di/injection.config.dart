@@ -38,6 +38,8 @@ import '../../features/wellness_packages/domain/repositories/wellness_package_re
     as _i472;
 import '../../features/wellness_packages/domain/usecases/get_wellness_packages_use_case.dart'
     as _i419;
+import '../../features/wellness_packages/presentation/blocs/wellness_packages_bloc.dart'
+    as _i1018;
 import '../errors/error_handler.dart' as _i433;
 import '../l10n/locale_cubit.dart' as _i171;
 import '../network/connectivity_service.dart' as _i491;
@@ -132,6 +134,8 @@ extension GetItInjectableX on _i174.GetIt {
           gh<_i711.LogoutUseCase>(),
           gh<_i594.CheckAuthUseCase>(),
         ));
+    gh.factory<_i1018.WellnessPackagesBloc>(() =>
+        _i1018.WellnessPackagesBloc(gh<_i419.GetWellnessPackagesUseCase>()));
     return this;
   }
 }
