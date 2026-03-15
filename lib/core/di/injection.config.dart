@@ -51,8 +51,8 @@ import '../storage/local_storage_service.dart' as _i744;
 import '../storage/preferences_service.dart' as _i636;
 import '../storage/secure_storage_service.dart' as _i666;
 
-const String _dev = 'dev';
 const String _test = 'test';
+const String _dev = 'dev';
 const String _staging = 'staging';
 const String _production = 'production';
 
@@ -79,7 +79,7 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i636.PreferencesService());
     gh.lazySingleton<_i320.WellnessPackageRemoteDataSource>(
       () => const _i37.WellnessPackageRemoteDataSourceMock(),
-      registerFor: {_dev},
+      registerFor: {_test},
     );
     gh.lazySingleton<_i107.AuthRemoteDataSource>(
       () => const _i954.AuthRemoteDataSourceMock(),
@@ -96,6 +96,14 @@ extension GetItInjectableX on _i174.GetIt {
           gh<_i344.LoggingInterceptor>(),
           gh<_i511.ErrorInterceptor>(),
         ));
+    gh.lazySingleton<_i320.WellnessPackageRemoteDataSource>(
+      () => _i819.WellnessPackageRemoteDataSourceHttp(gh<_i667.DioClient>()),
+      registerFor: {
+        _dev,
+        _staging,
+        _production,
+      },
+    );
     gh.lazySingleton<_i107.AuthRemoteDataSource>(
       () => _i827.AuthRemoteDataSourceHttp(gh<_i667.DioClient>()),
       registerFor: {
@@ -104,36 +112,29 @@ extension GetItInjectableX on _i174.GetIt {
         _production,
       },
     );
+    gh.lazySingleton<_i472.WellnessPackageRepository>(() =>
+        _i143.WellnessPackageRepositoryImpl(
+            gh<_i320.WellnessPackageRemoteDataSource>()));
     gh.lazySingleton<_i787.AuthRepository>(() => _i153.AuthRepositoryImpl(
           gh<_i107.AuthRemoteDataSource>(),
           gh<_i744.LocalStorageService>(),
         ));
-    gh.lazySingleton<_i320.WellnessPackageRemoteDataSource>(
-      () => _i819.WellnessPackageRemoteDataSourceHttp(gh<_i667.DioClient>()),
-      registerFor: {
-        _staging,
-        _production,
-      },
-    );
+    gh.factory<_i419.GetWellnessPackagesUseCase>(() =>
+        _i419.GetWellnessPackagesUseCase(
+            gh<_i472.WellnessPackageRepository>()));
     gh.factory<_i594.CheckAuthUseCase>(
         () => _i594.CheckAuthUseCase(gh<_i787.AuthRepository>()));
     gh.factory<_i37.LoginUseCase>(
         () => _i37.LoginUseCase(gh<_i787.AuthRepository>()));
     gh.factory<_i711.LogoutUseCase>(
         () => _i711.LogoutUseCase(gh<_i787.AuthRepository>()));
-    gh.lazySingleton<_i472.WellnessPackageRepository>(() =>
-        _i143.WellnessPackageRepositoryImpl(
-            gh<_i320.WellnessPackageRemoteDataSource>()));
+    gh.factory<_i1018.WellnessPackagesBloc>(() =>
+        _i1018.WellnessPackagesBloc(gh<_i419.GetWellnessPackagesUseCase>()));
     gh.singleton<_i85.AuthBloc>(() => _i85.AuthBloc(
           gh<_i37.LoginUseCase>(),
           gh<_i711.LogoutUseCase>(),
           gh<_i594.CheckAuthUseCase>(),
         ));
-    gh.factory<_i419.GetWellnessPackagesUseCase>(() =>
-        _i419.GetWellnessPackagesUseCase(
-            gh<_i472.WellnessPackageRepository>()));
-    gh.factory<_i1018.WellnessPackagesBloc>(() =>
-        _i1018.WellnessPackagesBloc(gh<_i419.GetWellnessPackagesUseCase>()));
     return this;
   }
 }

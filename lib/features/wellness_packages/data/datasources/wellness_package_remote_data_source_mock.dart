@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 
 /// Mock implementation of [WellnessPackageRemoteDataSource] for the **dev**
 /// environment.
-@LazySingleton(as: WellnessPackageRemoteDataSource, env: ['dev'])
+@LazySingleton(as: WellnessPackageRemoteDataSource, env: ['test'])
 class WellnessPackageRemoteDataSourceMock
     implements WellnessPackageRemoteDataSource {
   const WellnessPackageRemoteDataSourceMock();
