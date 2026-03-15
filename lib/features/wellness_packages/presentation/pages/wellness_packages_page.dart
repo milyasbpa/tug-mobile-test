@@ -25,8 +25,8 @@ class WellnessPackagesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) =>
-          getIt<WellnessPackagesBloc>()..add(const WellnessPackagesLoadRequested()),
+      create: (_) => getIt<WellnessPackagesBloc>()
+        ..add(const WellnessPackagesLoadRequested()),
       child: const _WellnessPackagesView(),
     );
   }

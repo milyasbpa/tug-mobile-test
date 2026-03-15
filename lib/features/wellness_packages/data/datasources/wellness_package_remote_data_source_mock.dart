@@ -73,8 +73,9 @@ class WellnessPackageRemoteDataSourceMock
     // Simple client-side pagination on the fixture list.
     final start = (params.page - 1) * params.limit;
     final end = (start + params.limit).clamp(0, _fixtures.length);
-    final items =
-        start >= _fixtures.length ? <WellnessPackageModel>[] : _fixtures.sublist(start, end);
+    final items = start >= _fixtures.length
+        ? <WellnessPackageModel>[]
+        : _fixtures.sublist(start, end);
     final totalPages = (_fixtures.length / params.limit).ceil();
 
     return PaginatedPackagesModel(
