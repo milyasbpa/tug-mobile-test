@@ -7,9 +7,6 @@ import 'package:flutter_starter_kit/core/theme/app_text_styles.dart';
 import 'package:flutter_starter_kit/features/wellness_packages/domain/entities/wellness_package.dart';
 
 /// Displays a single [WellnessPackage] as a styled card.
-///
-/// Shows the package name, description, price (formatted as IDR currency),
-/// and duration in minutes.
 class WellnessPackageCard extends StatelessWidget {
   const WellnessPackageCard({required this.package, super.key});
 
@@ -48,7 +45,7 @@ class WellnessPackageCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // ── Name row ──────────────────────────────────────────────────
+            // Name row────
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -88,7 +85,7 @@ class WellnessPackageCard extends StatelessWidget {
 
             const SizedBox(height: AppSpacing.xs),
 
-            // ── Description ───────────────────────────────────────────────
+            // Description────
             Text(
               package.description,
               style: AppTextStyles.bodySmall.copyWith(
@@ -100,7 +97,7 @@ class WellnessPackageCard extends StatelessWidget {
 
             const SizedBox(height: AppSpacing.md),
 
-            // ── Price ─────────────────────────────────────────────────────
+            // Price────────
             Row(
               children: [
                 const Icon(

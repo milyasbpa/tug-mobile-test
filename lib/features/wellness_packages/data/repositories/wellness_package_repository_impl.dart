@@ -9,10 +9,6 @@ import 'package:flutter_starter_kit/features/wellness_packages/domain/repositori
 import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
 
-/// Concrete implementation of [WellnessPackageRepository].
-///
-/// Bridges the data layer ([WellnessPackageRemoteDataSource]) with the domain
-/// layer by converting raw exceptions into typed [Failure]s.
 @LazySingleton(as: WellnessPackageRepository)
 class WellnessPackageRepositoryImpl implements WellnessPackageRepository {
   const WellnessPackageRepositoryImpl(this._remoteDataSource);

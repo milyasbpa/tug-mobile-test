@@ -7,8 +7,6 @@ import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
 
 /// Fetches a paginated list of wellness packages from the remote source.
-///
-/// Delegates to [WellnessPackageRepository] which abstracts the data source.
 @injectable
 class GetWellnessPackagesUseCase
     implements UseCase<PaginatedPackages, GetPackagesParams> {

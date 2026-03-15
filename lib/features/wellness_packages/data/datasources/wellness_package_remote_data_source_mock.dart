@@ -6,9 +6,6 @@ import 'package:injectable/injectable.dart';
 
 /// Mock implementation of [WellnessPackageRemoteDataSource] for the **dev**
 /// environment.
-///
-/// Returns hard-coded fixture data so the packages screen can be developed
-/// and tested without a running backend.
 @LazySingleton(as: WellnessPackageRemoteDataSource, env: ['dev'])
 class WellnessPackageRemoteDataSourceMock
     implements WellnessPackageRemoteDataSource {

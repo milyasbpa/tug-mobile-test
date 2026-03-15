@@ -8,10 +8,6 @@ import 'package:flutter_starter_kit/features/auth/domain/repositories/auth_repos
 import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
 
-/// Concrete implementation of [AuthRepository].
-///
-/// Bridges the data layer ([AuthRemoteDataSource], [LocalStorageService])
-/// with the domain layer by converting raw exceptions into typed [Failure]s.
 @LazySingleton(as: AuthRepository)
 class AuthRepositoryImpl implements AuthRepository {
   const AuthRepositoryImpl(
@@ -108,8 +104,6 @@ class AuthRepositoryImpl implements AuthRepository {
     }
   }
 
-  /// Unwraps the typed [AppException] embedded by [ErrorInterceptor] inside
-  /// [DioException.error] and converts it to a [Failure].
   Failure _failureFromDio(DioException e) {
     final inner = e.error;
     if (inner is UnauthorizedException) {

@@ -6,10 +6,6 @@ import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
 
 /// Checks whether a valid session already exists in local storage.
-///
-/// Returns [AuthUser] if a token is found so the app can skip the login
-/// screen on subsequent launches. Returns [UnauthorizedFailure] when no
-/// token is present, directing the router to the login page.
 @injectable
 class CheckAuthUseCase implements UseCase<AuthUser, NoParams> {
   const CheckAuthUseCase(this._repository);

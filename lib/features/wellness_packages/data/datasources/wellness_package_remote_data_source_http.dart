@@ -5,9 +5,6 @@ import 'package:flutter_starter_kit/features/wellness_packages/domain/entities/g
 import 'package:injectable/injectable.dart';
 
 /// Real HTTP implementation of [WellnessPackageRemoteDataSource].
-///
-/// Used in `staging` and `production` environments.
-/// Calls `GET /api/mobile/packages` via the configured [DioClient].
 @LazySingleton(as: WellnessPackageRemoteDataSource, env: ['staging', 'production'])
 class WellnessPackageRemoteDataSourceHttp
     implements WellnessPackageRemoteDataSource {

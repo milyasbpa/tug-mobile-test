@@ -4,15 +4,6 @@ import 'package:flutter_starter_kit/features/auth/data/models/auth_response_mode
 import 'package:injectable/injectable.dart';
 
 /// Mock implementation of [AuthRemoteDataSource] for the **dev** environment.
-///
-/// Simulates network latency and returns fixture data so the auth flow can be
-/// tested without a real backend or internet connection.
-///
-/// Accepted credentials (login):
-///   email: any valid-looking email  |  password: any non-empty string
-///
-/// Rejected credentials (triggers [UnauthorizedException]):
-///   password: "wrong" (literal string — useful for testing error state)
 @LazySingleton(as: AuthRemoteDataSource, env: ['dev'])
 class AuthRemoteDataSourceMock implements AuthRemoteDataSource {
   const AuthRemoteDataSourceMock();

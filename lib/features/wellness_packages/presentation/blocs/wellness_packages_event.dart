@@ -9,8 +9,6 @@ sealed class WellnessPackagesEvent extends Equatable {
 }
 
 /// Load the first page of packages, optionally filtered by [search].
-///
-/// Also used to refresh the list from scratch.
 final class WellnessPackagesLoadRequested extends WellnessPackagesEvent {
   const WellnessPackagesLoadRequested({this.search});
 
@@ -21,9 +19,6 @@ final class WellnessPackagesLoadRequested extends WellnessPackagesEvent {
 }
 
 /// Load the next page of packages and append to the existing list.
-///
-/// Ignored if the current state is not [WellnessPackagesLoaded] or
-/// there are no more pages to fetch.
 final class WellnessPackagesLoadMoreRequested extends WellnessPackagesEvent {
   const WellnessPackagesLoadMoreRequested();
 }

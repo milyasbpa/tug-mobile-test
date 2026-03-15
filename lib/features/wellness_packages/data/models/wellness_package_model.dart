@@ -1,22 +1,5 @@
 import 'package:flutter_starter_kit/features/wellness_packages/domain/entities/wellness_package.dart';
 
-/// DTO that maps the JSON item from `GET /api/mobile/packages` to a Dart object.
-///
-/// Used only in the data layer — treated as a [WellnessPackage] everywhere
-/// outside this layer (no casting needed since it extends the entity).
-///
-/// Example JSON item:
-/// ```json
-/// {
-///   "id": "uuid",
-///   "name": "Deep Tissue Massage",
-///   "description": "...",
-///   "price": 150000.0,
-///   "durationMinutes": 60,
-///   "createdAt": "2026-01-01T00:00:00.000Z",
-///   "updatedAt": "2026-01-01T00:00:00.000Z"
-/// }
-/// ```
 class WellnessPackageModel extends WellnessPackage {
   const WellnessPackageModel({
     required super.id,

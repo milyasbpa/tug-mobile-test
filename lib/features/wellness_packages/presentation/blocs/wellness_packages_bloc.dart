@@ -6,10 +6,6 @@ import 'package:flutter_starter_kit/features/wellness_packages/presentation/bloc
 import 'package:injectable/injectable.dart';
 
 /// Manages the lifecycle for the Wellness Packages feature.
-///
-/// Supports initial load, pull-to-refresh, and infinite-scroll pagination.
-/// Inject via `getIt<WellnessPackagesBloc>()` and provide it with
-/// [BlocProvider] at the page level.
 @injectable
 class WellnessPackagesBloc
     extends Bloc<WellnessPackagesEvent, WellnessPackagesState> {
@@ -21,9 +17,6 @@ class WellnessPackagesBloc
 
   final GetWellnessPackagesUseCase _getPackages;
 
-  /// Loads the first page of packages, optionally filtered by a search query.
-  ///
-  /// Resets any existing list — use this for initial load and pull-to-refresh.
   Future<void> _onLoadRequested(
     WellnessPackagesLoadRequested event,
     Emitter<WellnessPackagesState> emit,
@@ -40,10 +33,6 @@ class WellnessPackagesBloc
     );
   }
 
-  /// Appends the next page of packages to the existing list.
-  ///
-  /// No-op if the current state is not [WellnessPackagesLoaded] or
-  /// [PaginatedPackages.hasNextPage] is false.
   Future<void> _onLoadMoreRequested(
     WellnessPackagesLoadMoreRequested event,
     Emitter<WellnessPackagesState> emit,

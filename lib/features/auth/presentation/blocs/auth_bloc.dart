@@ -9,9 +9,6 @@ import 'package:flutter_starter_kit/features/auth/presentation/blocs/auth_state.
 import 'package:injectable/injectable.dart';
 
 /// Manages the authentication lifecycle for the entire application.
-///
-/// Registered as a singleton so the router and the widget tree share the
-/// same instance. Dispatch events via `context.read<AuthBloc>().add(...)`.
 @singleton
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc(

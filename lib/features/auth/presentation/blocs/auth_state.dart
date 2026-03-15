@@ -10,8 +10,6 @@ sealed class AuthState extends Equatable {
 }
 
 /// App has just launched — auth status not yet determined.
-///
-/// The router stays on its current location until this resolves.
 final class AuthInitial extends AuthState {
   const AuthInitial();
 }
@@ -21,7 +19,6 @@ final class AuthLoading extends AuthState {
   const AuthLoading();
 }
 
-/// The user has a valid session and is authenticated.
 final class AuthAuthenticated extends AuthState {
   const AuthAuthenticated({required this.user});
 
@@ -31,7 +28,6 @@ final class AuthAuthenticated extends AuthState {
   List<Object?> get props => [user];
 }
 
-/// No valid session exists — user must log in.
 final class AuthUnauthenticated extends AuthState {
   const AuthUnauthenticated();
 }

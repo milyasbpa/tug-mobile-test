@@ -5,8 +5,6 @@ import 'package:fpdart/fpdart.dart';
 import 'package:injectable/injectable.dart';
 
 /// Clears the session — deletes all stored tokens and user data.
-///
-/// Uses [NoParams] as the use case requires no input.
 @injectable
 class LogoutUseCase implements UseCase<Unit, NoParams> {
   const LogoutUseCase(this._repository);
