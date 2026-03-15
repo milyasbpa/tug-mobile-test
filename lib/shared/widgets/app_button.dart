@@ -1,33 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_starter_kit/core/theme/app_spacing.dart';
 
-/// Variant controls the visual style of [AppButton].
 enum AppButtonVariant {
-  /// [FilledButton] — primary CTA, high emphasis.
   primary,
-
-  /// [FilledButton.tonal] — secondary CTA, medium emphasis.
   secondary,
-
-  /// [OutlinedButton] — outlined, medium emphasis.
   outlined,
-
-  /// [TextButton] — low emphasis, ghost action.
   text,
 }
 
-/// Standardised application button with consistent sizing, loading state,
-/// and four visual variants.
-///
-/// Usage:
-/// ```dart
-/// AppButton(
-///   label: 'Sign In',
-///   onPressed: _submit,
-///   isLoading: state is AuthLoading,
-///   isFullWidth: true,
-/// )
-/// ```
 class AppButton extends StatelessWidget {
   const AppButton({
     required this.label,
@@ -124,7 +104,6 @@ class AppButton extends StatelessWidget {
       );
 }
 
-/// Controls the height / padding of [AppButton].
 enum AppButtonSize {
   small,
   medium,

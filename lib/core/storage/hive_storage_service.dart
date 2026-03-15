@@ -1,8 +1,6 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:injectable/injectable.dart';
 
-/// Key-value store for non-sensitive structured data.
-/// Hive.initFlutter() must be called in main() before use.
 @lazySingleton
 class HiveStorageService {
   static const String _boxName = 'app_box';

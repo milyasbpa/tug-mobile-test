@@ -4,28 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_starter_kit/core/theme/app_colors.dart';
 import 'package:flutter_starter_kit/core/theme/app_radius.dart';
 
-/// Loading and skeleton placeholder widgets.
-///
-/// Usage:
-/// ```dart
-/// // Full-screen blocking loader
-/// AppLoading.circular()
-///
-/// // Inline spinner
-/// const AppLoading.inline()
-///
-/// // Shimmer skeleton block
-/// AppLoading.skeleton(width: 200, height: 20)
-/// ```
 abstract final class AppLoading {
-  /// Centered [CircularProgressIndicator] — use as a page-level loader.
   static Widget circular({Color? color}) => Center(
         child: CircularProgressIndicator(
           color: color,
         ),
       );
 
-  /// Small inline [CircularProgressIndicator] — use inside buttons or lists.
   static Widget inline({
     double size = 20,
     double strokeWidth = 2,
@@ -39,9 +24,6 @@ abstract final class AppLoading {
         ),
       );
 
-  /// Shimmer skeleton rectangle.
-  ///
-  /// Animates a gradient sweep to indicate loading content.
   static Widget skeleton({
     double? width,
     double height = 16,
@@ -53,14 +35,12 @@ abstract final class AppLoading {
         borderRadius: borderRadius,
       );
 
-  /// A full card-shaped skeleton — useful for list items.
   static Widget skeletonCard({double height = 80}) => _ShimmerBox(
         height: height,
         borderRadius: AppRadius.mdBorderRadius,
       );
 }
 
-/// Animated shimmer widget that does not require an external package.
 class _ShimmerBox extends StatefulWidget {
   const _ShimmerBox({
     required this.height,

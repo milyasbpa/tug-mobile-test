@@ -2,18 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_starter_kit/core/theme/app_colors.dart';
 import 'package:flutter_starter_kit/core/theme/app_spacing.dart';
 
-/// Severity type for [AppSnackBar].
 enum AppSnackBarType { info, success, warning, error }
 
-/// Utility class for displaying floating snack bars with semantic coloring.
-///
-/// Usage:
-/// ```dart
-/// AppSnackBar.show(context, 'Saved successfully!', type: AppSnackBarType.success);
-/// AppSnackBar.show(context, 'Something went wrong.', type: AppSnackBarType.error);
-/// ```
 abstract final class AppSnackBar {
-  /// Displays a themed [SnackBar] anchored to the nearest [Scaffold].
   static void show(
     BuildContext context,
     String message, {

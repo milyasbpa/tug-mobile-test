@@ -4,19 +4,6 @@ import 'package:flutter_starter_kit/core/theme/app_spacing.dart';
 import 'package:flutter_starter_kit/core/theme/app_text_styles.dart';
 import 'package:flutter_starter_kit/shared/widgets/app_button.dart';
 
-/// Displays a centered empty state with an optional icon, title, subtitle,
-/// and call-to-action button.
-///
-/// Usage:
-/// ```dart
-/// AppEmptyState(
-///   icon: Icons.inbox_outlined,
-///   title: 'No items yet',
-///   subtitle: 'Create your first item to get started.',
-///   actionLabel: 'Create',
-///   onAction: _openCreateSheet,
-/// )
-/// ```
 class AppEmptyState extends StatelessWidget {
   const AppEmptyState({
     required this.title,

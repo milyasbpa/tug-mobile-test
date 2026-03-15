@@ -23,7 +23,6 @@ class ErrorHandler {
     handle(details.exception, details.stack ?? StackTrace.empty);
   }
 
-  // TODO(i18n): replace hardcoded strings with slang keys from the common namespace.
   static String failureToMessage(Failure failure) {
     return switch (failure) {
       NetworkFailure() => failure.message.isNotEmpty

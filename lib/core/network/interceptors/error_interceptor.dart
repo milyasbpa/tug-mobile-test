@@ -2,16 +2,12 @@ import 'package:dio/dio.dart';
 import 'package:flutter_starter_kit/core/errors/exceptions.dart';
 import 'package:injectable/injectable.dart';
 
-/// Converts HTTP and connection errors into typed [AppException]s so
-/// upper layers never deal with raw [DioException]s.
 @injectable
 class ErrorInterceptor extends Interceptor {
   const ErrorInterceptor();
 
   @override
   void onError(DioException err, ErrorInterceptorHandler handler) {
-    // Use handler.reject() — NOT throw — so the typed exception is embedded in
-    // DioException.error and Dio does not double-wrap it into a second [unknown].
     Exception appException;
     switch (err.type) {
       case DioExceptionType.connectionTimeout:

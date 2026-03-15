@@ -2,8 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 
-/// Bridges a [Stream] to [ChangeNotifier] so [GoRouter] re-evaluates
-/// its redirect on every stream event.
 class GoRouterRefreshStream extends ChangeNotifier {
   GoRouterRefreshStream(Stream<dynamic> stream) {
     notifyListeners();

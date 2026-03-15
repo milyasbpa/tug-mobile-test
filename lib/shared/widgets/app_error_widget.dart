@@ -4,15 +4,6 @@ import 'package:flutter_starter_kit/core/theme/app_spacing.dart';
 import 'package:flutter_starter_kit/core/theme/app_text_styles.dart';
 import 'package:flutter_starter_kit/shared/widgets/app_button.dart';
 
-/// Displays a centered error state with an icon, message, and optional retry.
-///
-/// Usage:
-/// ```dart
-/// AppErrorWidget(
-///   message: 'Failed to load data.',
-///   onRetry: _fetchData,
-/// )
-/// ```
 class AppErrorWidget extends StatelessWidget {
   const AppErrorWidget({
     required this.message,

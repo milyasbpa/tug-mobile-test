@@ -1,21 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Standardised text field used throughout the app.
-///
-/// Wraps [TextFormField] with consistent styling from [AppTheme] and adds:
-/// - Password visibility toggle when [obscureText] is true
-/// - [validator] shorthand
-/// - Leading / trailing icon support
-///
-/// Usage:
-/// ```dart
-/// AppTextField(
-///   controller: _emailController,
-///   label: 'Email',
-///   keyboardType: TextInputType.emailAddress,
-///   validator: (v) => v!.isEmpty ? 'Required' : null,
-/// )
-/// ```
 class AppTextField extends StatefulWidget {
   const AppTextField({
     required this.label,
@@ -50,8 +34,6 @@ class AppTextField extends StatefulWidget {
   final bool autofocus;
   final Widget? prefixIcon;
 
-  /// Custom suffix widget. When [obscureText] is true and this is null, an eye
-  /// icon toggle is shown automatically.
   final Widget? suffixIcon;
   final int? maxLines;
   final String? initialValue;
