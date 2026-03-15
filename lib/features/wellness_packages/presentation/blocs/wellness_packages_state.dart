@@ -21,10 +21,6 @@ final class WellnessPackagesLoading extends WellnessPackagesState {
 }
 
 /// Packages have been loaded successfully.
-///
-/// [packages] is the accumulated list across all loaded pages.
-/// [paginatedData] holds the latest API response (used for pagination meta).
-/// [isLoadingMore] is `true` while the next page is being fetched.
 final class WellnessPackagesLoaded extends WellnessPackagesState {
   const WellnessPackagesLoaded({
     required this.packages,
@@ -36,7 +32,6 @@ final class WellnessPackagesLoaded extends WellnessPackagesState {
   final PaginatedPackages paginatedData;
   final bool isLoadingMore;
 
-  /// Returns a copy with the specified fields replaced.
   WellnessPackagesLoaded copyWith({
     List<WellnessPackage>? packages,
     PaginatedPackages? paginatedData,

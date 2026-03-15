@@ -45,7 +45,7 @@ class WellnessPackageCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Name row────
+            // Name row
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -85,7 +85,7 @@ class WellnessPackageCard extends StatelessWidget {
 
             const SizedBox(height: AppSpacing.xs),
 
-            // Description────
+            // Description
             Text(
               package.description,
               style: AppTextStyles.bodySmall.copyWith(
@@ -97,7 +97,7 @@ class WellnessPackageCard extends StatelessWidget {
 
             const SizedBox(height: AppSpacing.md),
 
-            // Price────────
+            // Price
             Row(
               children: [
                 const Icon(

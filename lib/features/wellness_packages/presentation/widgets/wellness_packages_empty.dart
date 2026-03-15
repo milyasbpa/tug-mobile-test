@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_starter_kit/core/l10n/translations.g.dart';
 import 'package:flutter_starter_kit/shared/widgets/app_empty_state.dart';
 
-/// Displayed when the API returns an empty packages list.
 class WellnessPackagesEmptyView extends StatelessWidget {
   const WellnessPackagesEmptyView({super.key});
 

@@ -17,9 +17,6 @@ import 'package:flutter_starter_kit/features/wellness_packages/presentation/widg
 import 'package:flutter_starter_kit/features/wellness_packages/presentation/widgets/wellness_packages_error.dart';
 import 'package:flutter_starter_kit/shared/widgets/app_loading.dart';
 
-/// Entry point for the Wellness Packages feature.
-///
-/// Provides [WellnessPackagesBloc] and triggers an initial load.
 class WellnessPackagesPage extends StatelessWidget {
   const WellnessPackagesPage({super.key});
 
@@ -173,8 +170,6 @@ class _WellnessPackagesViewState extends State<_WellnessPackagesView> {
   }
 }
 
-/// Scrollable list of package cards with pull-to-refresh and a load-more
-/// indicator at the bottom.
 class _PackagesList extends StatelessWidget {
   const _PackagesList({
     required this.packages,

@@ -3,8 +3,6 @@ import 'package:flutter_starter_kit/core/theme/app_spacing.dart';
 import 'package:flutter_starter_kit/shared/widgets/app_loading.dart';
 
 /// A shimmer skeleton list displayed while [WellnessPackagesLoading] is active.
-///
-/// Renders [itemCount] skeleton cards that mimic the shape of [WellnessPackageCard].
 class WellnessPackageLoadingView extends StatelessWidget {
   const WellnessPackageLoadingView({super.key, this.itemCount = 6});
 
