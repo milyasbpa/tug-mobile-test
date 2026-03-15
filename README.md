@@ -110,6 +110,13 @@ lib/
 - Dart ≥ 3.2.5
 - Backend API running at `http://localhost:4000` (see `/backend`)
 
+#### Test Account
+
+| Field    | Value              |
+|----------|--------------------|
+| Email    | user@example.com   |
+| Password | user123            |
+
 #### Steps
 
 ```bash
