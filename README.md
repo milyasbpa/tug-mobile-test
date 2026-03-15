@@ -76,6 +76,14 @@ lib/
 
 ---
 
+## Screenshots
+
+| Login | Packages List | Search |
+|-------|--------------|--------|
+| ![Login](docs/login.png) | ![List](docs/list.png) | ![Search](docs/search.png) |
+
+---
+
 ## Assessment Notes — TUG Full-Stack Assessment (Part 3: Mobile App)
 
 > This section documents the implementation details for the **Wellness Packages** feature
