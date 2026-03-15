@@ -19,7 +19,7 @@ class AuthRemoteDataSourceHttp implements AuthRemoteDataSource {
     required String password,
   }) async {
     final response = await _dioClient.dio.post<Map<String, dynamic>>(
-      '/api/auth/login',
+      '/api/v1/auth/login',
       data: {'email': email, 'password': password},
     );
     return AuthResponseModel.fromJson(response.data!);
@@ -31,7 +31,7 @@ class AuthRemoteDataSourceHttp implements AuthRemoteDataSource {
     required String password,
   }) async {
     final response = await _dioClient.dio.post<Map<String, dynamic>>(
-      '/api/auth/register',
+      '/api/v1/auth/register',
       data: {'email': email, 'password': password},
     );
     return AuthResponseModel.fromJson(response.data!);
@@ -39,11 +39,11 @@ class AuthRemoteDataSourceHttp implements AuthRemoteDataSource {
 
   @override
   Future<void> logout() async {
-    await _dioClient.dio.post<void>('/api/auth/logout');
+    await _dioClient.dio.post<void>('/api/v1/auth/logout');
   }
 
   @override
   Future<void> me() async {
-    await _dioClient.dio.get<void>('/api/auth/me');
+    await _dioClient.dio.get<void>('/api/v1/auth/me');
   }
 }

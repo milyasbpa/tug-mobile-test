@@ -18,7 +18,7 @@ class WellnessPackageRemoteDataSourceHttp
   @override
   Future<PaginatedPackagesModel> getPackages(GetPackagesParams params) async {
     final response = await _dioClient.dio.get<Map<String, dynamic>>(
-      '/api/mobile/packages',
+      '/api/v1/mobile/packages',
       queryParameters: {
         'page': params.page,
         'limit': params.limit,
