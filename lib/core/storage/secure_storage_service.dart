@@ -2,18 +2,12 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_starter_kit/core/storage/local_storage_service.dart';
 import 'package:injectable/injectable.dart';
 
-/// Keys used in platform secure storage.
-///
-/// Centralised here so all read/write operations stay consistent.
 abstract class _Keys {
   static const String accessToken = 'access_token';
   static const String refreshToken = 'refresh_token';
 }
 
-/// Stores auth tokens in platform-level encrypted storage.
-///
-/// - **Android**: EncryptedSharedPreferences (AES256-GCM via Keystore)
-/// - **iOS / macOS**: Keychain Services
+/// Stores tokens in platform encrypted storage (Keychain on iOS, EncryptedSharedPrefs on Android).
 @LazySingleton(as: LocalStorageService)
 class SecureStorageService implements LocalStorageService {
   SecureStorageService()

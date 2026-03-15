@@ -2,10 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 
-/// Logs all HTTP request and response details in debug mode.
-///
-/// Suppressed entirely in non-debug builds via [kDebugMode] so no
-/// sensitive data is ever printed in production.
+/// Logs HTTP requests and responses in debug mode only.
 @injectable
 class LoggingInterceptor extends Interceptor {
   const LoggingInterceptor();

@@ -1,12 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-/// Base class for all failures in the domain layer.
-///
-/// Each layer must convert its exceptions to a [Failure] subclass,
-/// so the presentation layer only needs to know about [Failure], not
-/// the technical exception details from the data layer.
-///
-/// Extends [Equatable] to allow value comparison in tests and BLoC states.
+/// Base class for all domain-layer failures.
 abstract class Failure extends Equatable {
   const Failure([this.message = '']);
 

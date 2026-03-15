@@ -1,14 +1,7 @@
 import 'package:flutter/material.dart';
 
-/// Typography scale for the application.
-///
-/// Mirrors Material Design 3 naming conventions. Use these in [AppTheme] for
-/// the [TextTheme] or apply directly:
-/// ```dart
-/// Text('Hello', style: AppTextStyles.titleLarge)
-/// ```
 abstract final class AppTextStyles {
-  // ── Display ───────────────────────────────────────────────────────────────
+  // Display
 
   static const TextStyle displayLarge = TextStyle(
     fontSize: 57,
@@ -29,7 +22,7 @@ abstract final class AppTextStyles {
     height: 1.22,
   );
 
-  // ── Headline ──────────────────────────────────────────────────────────────
+  // Headline
 
   static const TextStyle headlineLarge = TextStyle(
     fontSize: 32,
@@ -49,7 +42,7 @@ abstract final class AppTextStyles {
     height: 1.33,
   );
 
-  // ── Title ──────────────────────────────────────────────────────────────────
+  // Title
 
   static const TextStyle titleLarge = TextStyle(
     fontSize: 22,
@@ -71,7 +64,7 @@ abstract final class AppTextStyles {
     height: 1.43,
   );
 
-  // ── Body ──────────────────────────────────────────────────────────────────
+  // Body
 
   static const TextStyle bodyLarge = TextStyle(
     fontSize: 16,
@@ -94,7 +87,7 @@ abstract final class AppTextStyles {
     height: 1.33,
   );
 
-  // ── Label ──────────────────────────────────────────────────────────────────
+  // Label
 
   static const TextStyle labelLarge = TextStyle(
     fontSize: 14,

@@ -4,15 +4,6 @@ import 'package:flutter_starter_kit/core/theme/app_colors.dart';
 import 'package:flutter_starter_kit/core/theme/app_radius.dart';
 import 'package:flutter_starter_kit/core/theme/app_text_styles.dart';
 
-/// Application theme configuration.
-///
-/// Usage in [MaterialApp]:
-/// ```dart
-/// MaterialApp.router(
-///   theme: AppTheme.light,
-///   darkTheme: AppTheme.dark,
-/// )
-/// ```
 abstract final class AppTheme {
   static ThemeData get light => _buildTheme(brightness: Brightness.light);
   static ThemeData get dark => _buildTheme(brightness: Brightness.dark);
@@ -34,7 +25,7 @@ abstract final class AppTheme {
       brightness: brightness,
       colorScheme: colorScheme,
 
-      // ── Typography ──────────────────────────────────────────────────────
+      // Typography
       textTheme: const TextTheme(
         displayLarge: AppTextStyles.displayLarge,
         displayMedium: AppTextStyles.displayMedium,
@@ -53,7 +44,7 @@ abstract final class AppTheme {
         labelSmall: AppTextStyles.labelSmall,
       ),
 
-      // ── AppBar ──────────────────────────────────────────────────────────
+      // AppBar
       appBarTheme: AppBarTheme(
         elevation: 0,
         scrolledUnderElevation: 1,
@@ -68,7 +59,7 @@ abstract final class AppTheme {
         ),
       ),
 
-      // ── Card ────────────────────────────────────────────────────────────
+      // Card
       cardTheme: CardThemeData(
         elevation: 0,
         shape: const RoundedRectangleBorder(
@@ -78,7 +69,7 @@ abstract final class AppTheme {
         margin: EdgeInsets.zero,
       ),
 
-      // ── Input / TextField ────────────────────────────────────────────────
+      // Input
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
         fillColor: isDark ? AppColors.surfaceDark3 : AppColors.grey100,
@@ -121,7 +112,7 @@ abstract final class AppTheme {
         ),
       ),
 
-      // ── FilledButton (primary CTA) ───────────────────────────────────────
+      // FilledButton
       filledButtonTheme: FilledButtonThemeData(
         style: FilledButton.styleFrom(
           minimumSize: const Size(64, 48),
@@ -132,7 +123,7 @@ abstract final class AppTheme {
         ),
       ),
 
-      // ── OutlinedButton ───────────────────────────────────────────────────
+      // OutlinedButton
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
           minimumSize: const Size(64, 48),
@@ -144,7 +135,7 @@ abstract final class AppTheme {
         ),
       ),
 
-      // ── TextButton ───────────────────────────────────────────────────────
+      // TextButton
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
           minimumSize: const Size(64, 40),
@@ -155,7 +146,7 @@ abstract final class AppTheme {
         ),
       ),
 
-      // ── Chip ─────────────────────────────────────────────────────────────
+      // Chip
       chipTheme: ChipThemeData(
         shape: const StadiumBorder(),
         labelStyle: AppTextStyles.labelMedium,
@@ -164,14 +155,14 @@ abstract final class AppTheme {
         ),
       ),
 
-      // ── Divider ──────────────────────────────────────────────────────────
+      // Divider
       dividerTheme: DividerThemeData(
         space: 1,
         thickness: 1,
         color: isDark ? AppColors.grey800 : AppColors.grey200,
       ),
 
-      // ── SnackBar ─────────────────────────────────────────────────────────
+      // SnackBar
       snackBarTheme: SnackBarThemeData(
         behavior: SnackBarBehavior.floating,
         shape: const RoundedRectangleBorder(
@@ -182,7 +173,7 @@ abstract final class AppTheme {
         ),
       ),
 
-      // ── Bottom Sheet ─────────────────────────────────────────────────────
+      // Bottom Sheet
       bottomSheetTheme: const BottomSheetThemeData(
         showDragHandle: true,
         shape: RoundedRectangleBorder(
@@ -192,7 +183,7 @@ abstract final class AppTheme {
         ),
       ),
 
-      // ── Dialog ───────────────────────────────────────────────────────────
+      // Dialog
       dialogTheme: const DialogThemeData(
         shape: RoundedRectangleBorder(
           borderRadius: AppRadius.lgBorderRadius,

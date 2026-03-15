@@ -1,6 +1,4 @@
-// Exceptions used in the data layer (datasources & repository implementations).
-// Do not let these exceptions leak into the domain or presentation layer —
-// convert them to a [Failure] inside the repository implementation.
+// Exceptions thrown in the data layer — converted to Failures in repositories.
 
 /// Thrown when the server returns an error response.
 class ServerException implements Exception {

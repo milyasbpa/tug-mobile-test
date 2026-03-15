@@ -2,15 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 
-/// Adapts a [Stream] into a [ChangeNotifier] so [GoRouter.refreshListenable]
-/// re-evaluates its redirect logic whenever the stream emits a new value.
-///
-/// Typically used with [AuthBloc.stream]:
-/// ```dart
-/// refreshListenable: GoRouterRefreshStream(getIt<AuthBloc>().stream),
-/// ```
-///
-/// Dispose is handled automatically when [GoRouter] is disposed.
+/// Bridges a [Stream] to [ChangeNotifier] so [GoRouter] re-evaluates
+/// its redirect on every stream event.
 class GoRouterRefreshStream extends ChangeNotifier {
   GoRouterRefreshStream(Stream<dynamic> stream) {
     notifyListeners();

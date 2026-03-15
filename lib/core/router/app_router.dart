@@ -15,7 +15,7 @@ import 'package:go_router/go_router.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: RouteNames.home,
-  debugLogDiagnostics: true, // TODO(step-17): disable in production build
+  debugLogDiagnostics: true,
   refreshListenable: GoRouterRefreshStream(getIt<AuthBloc>().stream),
   redirect: (context, state) {
     final authState = getIt<AuthBloc>().state;

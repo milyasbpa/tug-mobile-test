@@ -1,13 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_starter_kit/core/utils/app_logger.dart';
 
-/// Global observer for all Blocs and Cubits in the application.
-///
-/// Registered once in [main] via `Bloc.observer = const AppBlocObserver()`.
-///
-/// - [onTransition]: logs every state change in debug mode.
-/// - [onError]: logs errors via [AppLogger] and will forward to Crashlytics
-///   in Step 14.
+/// Logs all bloc transitions and errors.
 class AppBlocObserver extends BlocObserver {
   const AppBlocObserver();
 
@@ -34,6 +28,5 @@ class AppBlocObserver extends BlocObserver {
       error: error,
       stackTrace: stackTrace,
     );
-    // TODO(step-14): getIt<CrashlyticsService>().recordError(error, stackTrace);
   }
 }

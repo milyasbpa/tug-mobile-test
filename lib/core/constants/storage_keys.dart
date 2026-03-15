@@ -1,7 +1,3 @@
-/// Keys used to store data in SharedPreferences
-/// and flutter_secure_storage.
-///
-/// Centralised here to prevent typos when accessing storage.
 abstract final class StorageKeys {
   // ─── Auth ──────────────────────────────────────────────────────────────────
   static const String accessToken = 'access_token';
