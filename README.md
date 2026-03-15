@@ -32,12 +32,12 @@ flutter pub get
 
 ### 3. Setup environment files
 
-Copy the example env files and fill in the values:
+Copy the example env file and fill in the values for each flavor:
 
 ```bash
-cp .env.dev.example .env.dev
-cp .env.staging.example .env.staging
-cp .env.prod.example .env.prod
+cp .env.example .env.dev
+cp .env.example .env.staging
+cp .env.example .env.prod
 ```
 
 ### 4. Run the app
@@ -118,8 +118,8 @@ See [FLUTTER_STARTER_KIT_TODO.md](FLUTTER_STARTER_KIT_TODO.md) for the full setu
 # 1. Install dependencies
 flutter pub get
 
-# 2. Create the dev env file (set API_BASE_URL=http://localhost:4000)
-cp .env.dev.example .env.dev
+# 2. Create the dev env file from the example (set BASE_URL=http://localhost:4000)
+cp .env.example .env.dev
 
 # 3. Run in development (uses mock datasource — no real backend needed)
 make run-dev
@@ -258,7 +258,7 @@ release/*   ← release preparation
 
 ## Tech Stack
 
-- **State Management**: Riverpod / flutter_bloc
+- **State Management**: flutter_bloc
 - **Navigation**: go_router
 - **DI**: get_it + injectable
 - **Networking**: Dio + fpdart (Either)
@@ -275,15 +275,3 @@ release/*   ← release preparation
 3. Commit your changes (follow [Conventional Commits](https://www.conventionalcommits.org/))
 4. Push and open a Pull Request against `develop`
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
