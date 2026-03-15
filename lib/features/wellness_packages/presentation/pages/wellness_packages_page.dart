@@ -15,6 +15,8 @@ import 'package:flutter_starter_kit/features/wellness_packages/presentation/widg
 import 'package:flutter_starter_kit/features/wellness_packages/presentation/widgets/wellness_package_loading.dart';
 import 'package:flutter_starter_kit/features/wellness_packages/presentation/widgets/wellness_packages_empty.dart';
 import 'package:flutter_starter_kit/features/wellness_packages/presentation/widgets/wellness_packages_error.dart';
+import 'package:flutter_starter_kit/features/auth/presentation/blocs/auth_bloc.dart';
+import 'package:flutter_starter_kit/features/auth/presentation/blocs/auth_event.dart';
 import 'package:flutter_starter_kit/shared/widgets/app_loading.dart';
 
 class WellnessPackagesPage extends StatelessWidget {
@@ -138,6 +140,14 @@ class _WellnessPackagesViewState extends State<_WellnessPackagesView> {
                 _searchVisible ? t.searchTooltipClose : t.searchTooltipOpen,
             onPressed: _toggleSearch,
           ),
+          if (!_searchVisible)
+            IconButton(
+              icon: const Icon(Icons.logout),
+              tooltip: 'Logout',
+              onPressed: () => context.read<AuthBloc>().add(
+                    const AuthLogoutRequested(),
+                  ),
+            ),
         ],
       ),
       body: BlocBuilder<WellnessPackagesBloc, WellnessPackagesState>(
