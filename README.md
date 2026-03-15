@@ -74,8 +74,6 @@ lib/
 └── main.dart       # Entry point
 ```
 
-See [FLUTTER_STARTER_KIT_TODO.md](FLUTTER_STARTER_KIT_TODO.md) for the full setup checklist.
-
 ---
 
 ## Assessment Notes — TUG Full-Stack Assessment (Part 3: Mobile App)
