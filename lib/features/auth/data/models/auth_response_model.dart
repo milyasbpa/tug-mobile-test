@@ -3,25 +3,27 @@
 /// Used only in the data layer — converted to [AuthUser] before leaving
 /// [AuthRepositoryImpl].
 ///
-/// reqres.in login response:  `{"token": "..."}`
-/// reqres.in register response: `{"id": 4, "token": "..."}`
+/// API response shape (`AuthResponseDto`):
+/// ```json
+/// { "accessToken": "...", "refreshToken": "..." }
+/// ```
 class AuthResponseModel {
   const AuthResponseModel({
-    required this.token,
-    this.id,
+    required this.accessToken,
+    required this.refreshToken,
     this.email = '',
   });
 
   factory AuthResponseModel.fromJson(Map<String, dynamic> json) =>
       AuthResponseModel(
-        id: json['id'] as int?,
-        token: json['token'] as String,
+        accessToken: json['accessToken'] as String,
+        refreshToken: json['refreshToken'] as String,
       );
 
-  final int? id;
-  final String token;
+  final String accessToken;
+  final String refreshToken;
 
-  /// Email is not returned by reqres.in but carried through from the request
+  /// Email is not returned by the API but carried through from the request
   /// so [AuthRepositoryImpl] can build a complete [AuthUser] entity.
   final String email;
 }

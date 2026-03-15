@@ -15,4 +15,11 @@ abstract class AuthRemoteDataSource {
     required String email,
     required String password,
   });
+
+  /// Revokes the session server-side (`POST /api/auth/logout`).
+  Future<void> logout();
+
+  /// Verifies the access token against `GET /api/auth/me`.
+  /// Throws [UnauthorizedException] if the token is invalid or expired.
+  Future<void> me();
 }

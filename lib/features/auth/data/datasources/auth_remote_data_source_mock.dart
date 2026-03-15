@@ -17,7 +17,8 @@ import 'package:injectable/injectable.dart';
 class AuthRemoteDataSourceMock implements AuthRemoteDataSource {
   const AuthRemoteDataSourceMock();
 
-  static const _fakeToken = 'dev-mock-token-QpwL5tpe83iIkJO';
+  static const _fakeAccessToken = 'dev-mock-access-token-QpwL5tpe83iIkJO';
+  static const _fakeRefreshToken = 'dev-mock-refresh-token-abcdef123456';
   static const _fakeDelay = Duration(milliseconds: 800);
 
   @override
@@ -36,7 +37,11 @@ class AuthRemoteDataSourceMock implements AuthRemoteDataSource {
       throw const UnauthorizedException('Email and password are required.');
     }
 
-    return AuthResponseModel(token: _fakeToken, email: email);
+    return AuthResponseModel(
+      accessToken: _fakeAccessToken,
+      refreshToken: _fakeRefreshToken,
+      email: email,
+    );
   }
 
   @override
@@ -50,6 +55,21 @@ class AuthRemoteDataSourceMock implements AuthRemoteDataSource {
       throw const UnauthorizedException('Email and password are required.');
     }
 
-    return AuthResponseModel(id: 99, token: _fakeToken, email: email);
+    return AuthResponseModel(
+      accessToken: _fakeAccessToken,
+      refreshToken: _fakeRefreshToken,
+      email: email,
+    );
+  }
+
+  @override
+  Future<void> logout() async {
+    await Future<void>.delayed(_fakeDelay);
+  }
+
+  @override
+  Future<void> me() async {
+    await Future<void>.delayed(_fakeDelay);
+    // Mock: always succeeds — token considered valid in dev.
   }
 }

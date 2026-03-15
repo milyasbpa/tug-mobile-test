@@ -32,8 +32,9 @@ class AuthRepositoryImpl implements AuthRepository {
         email: email,
         password: password,
       );
-      final user = AuthUser(id: model.id, email: email, token: model.token);
-      await _localStorage.saveAccessToken(model.token);
+      final user = AuthUser(email: email, token: model.accessToken);
+      await _localStorage.saveAccessToken(model.accessToken);
+      await _localStorage.saveRefreshToken(model.refreshToken);
       return Right(user);
     } on DioException catch (e) {
       return Left(_failureFromDio(e));
@@ -56,8 +57,9 @@ class AuthRepositoryImpl implements AuthRepository {
         email: email,
         password: password,
       );
-      final user = AuthUser(id: model.id, email: email, token: model.token);
-      await _localStorage.saveAccessToken(model.token);
+      final user = AuthUser(email: email, token: model.accessToken);
+      await _localStorage.saveAccessToken(model.accessToken);
+      await _localStorage.saveRefreshToken(model.refreshToken);
       return Right(user);
     } on DioException catch (e) {
       return Left(_failureFromDio(e));
@@ -73,6 +75,13 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<Either<Failure, Unit>> logout() async {
     try {
+      await _remoteDataSource.logout();
+    } on DioException catch (_) {
+      // Best-effort: clear local session even if server call fails.
+    } on ServerException catch (_) {
+      // Best-effort.
+    }
+    try {
       await _localStorage.clearAll();
       return const Right(unit);
     } on CacheException catch (e) {
@@ -87,9 +96,13 @@ class AuthRepositoryImpl implements AuthRepository {
       if (token == null || token.isEmpty) {
         return const Left(UnauthorizedFailure('No active session found.'));
       }
-      // reqres.in has no /me endpoint, so a stored token means authenticated.
-      // Replace with a token-verification call when using a real backend.
+      // Verify token is still valid against GET /api/auth/me.
+      await _remoteDataSource.me();
       return Right(AuthUser(email: '', token: token));
+    } on DioException catch (e) {
+      return Left(_failureFromDio(e));
+    } on UnauthorizedException catch (e) {
+      return Left(UnauthorizedFailure(e.message));
     } on CacheException catch (e) {
       return Left(CacheFailure(e.message));
     }
