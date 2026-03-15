@@ -1,0 +1,11 @@
+{
+  "title": "Wellness Packages",
+  "searchHint": "Search packages\u2026",
+  "searchTooltipOpen": "Search",
+  "searchTooltipClose": "Clear search",
+  "empty": "No packages available",
+  "emptySubtitle": "Check back later for wellness packages.",
+  "loadingMoreLabel": "Loading more\u2026",
+  "durationMinutes": "$minutes min",
+  "navButton": "Wellness Packages"
+}

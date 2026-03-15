@@ -137,7 +137,7 @@ class _HomePage extends StatelessWidget {
                 FilledButton.icon(
                   onPressed: () => context.push(RouteNames.packages),
                   icon: const Icon(Icons.spa_outlined),
-                  label: const Text('Wellness Packages'),
+                  label: Text(context.t.wellnessPackages.navButton),
                 ),
               ],
             ),

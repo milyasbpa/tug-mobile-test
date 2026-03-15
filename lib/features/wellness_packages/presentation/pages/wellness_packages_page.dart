@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_starter_kit/core/di/injection.dart';
+import 'package:flutter_starter_kit/core/l10n/translations.g.dart';
 import 'package:flutter_starter_kit/core/theme/app_colors.dart';
 import 'package:flutter_starter_kit/core/theme/app_spacing.dart';
 import 'package:flutter_starter_kit/core/theme/app_text_styles.dart';
@@ -114,6 +115,7 @@ class _WellnessPackagesViewState extends State<_WellnessPackagesView> {
 
   @override
   Widget build(BuildContext context) {
+    final t = Translations.of(context).wellnessPackages;
     return Scaffold(
       appBar: AppBar(
         title: _searchVisible
@@ -122,20 +124,21 @@ class _WellnessPackagesViewState extends State<_WellnessPackagesView> {
                 autofocus: true,
                 onChanged: _onSearchChanged,
                 style: AppTextStyles.bodyMedium,
-                decoration: const InputDecoration(
-                  hintText: 'Search packages…',
+                decoration: InputDecoration(
+                  hintText: t.searchHint,
                   border: InputBorder.none,
-                  hintStyle: TextStyle(color: AppColors.grey500),
+                  hintStyle: const TextStyle(color: AppColors.grey500),
                 ),
               )
-            : const Text(
-                'Wellness Packages',
+            : Text(
+                t.title,
                 style: AppTextStyles.titleLarge,
               ),
         actions: [
           IconButton(
             icon: Icon(_searchVisible ? Icons.close : Icons.search_rounded),
-            tooltip: _searchVisible ? 'Clear search' : 'Search',
+            tooltip:
+                _searchVisible ? t.searchTooltipClose : t.searchTooltipOpen,
             onPressed: _toggleSearch,
           ),
         ],

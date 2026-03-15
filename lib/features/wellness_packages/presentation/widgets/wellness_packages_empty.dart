@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starter_kit/core/l10n/translations.g.dart';
 import 'package:flutter_starter_kit/shared/widgets/app_empty_state.dart';
 
 /// Displayed when the API returns an empty packages list.
@@ -7,10 +8,11 @@ class WellnessPackagesEmptyView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AppEmptyState(
+    final t = Translations.of(context).wellnessPackages;
+    return AppEmptyState(
       icon: Icons.spa_outlined,
-      title: 'No packages available',
-      subtitle: 'Check back later for wellness packages.',
+      title: t.empty,
+      subtitle: t.emptySubtitle,
     );
   }
 }

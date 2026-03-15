@@ -1,0 +1,11 @@
+{
+  "title": "Paket Wellness",
+  "searchHint": "Cari paket\u2026",
+  "searchTooltipOpen": "Cari",
+  "searchTooltipClose": "Hapus pencarian",
+  "empty": "Belum ada paket tersedia",
+  "emptySubtitle": "Kunjungi kembali untuk melihat paket wellness.",
+  "loadingMoreLabel": "Memuat lebih banyak\u2026",
+  "durationMinutes": "$minutes menit",
+  "navButton": "Paket Wellness"
+}

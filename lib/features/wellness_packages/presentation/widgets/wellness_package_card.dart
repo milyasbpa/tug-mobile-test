@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_starter_kit/core/l10n/translations.g.dart';
 import 'package:flutter_starter_kit/core/theme/app_colors.dart';
 import 'package:flutter_starter_kit/core/theme/app_radius.dart';
 import 'package:flutter_starter_kit/core/theme/app_spacing.dart';
@@ -73,7 +74,9 @@ class WellnessPackageCard extends StatelessWidget {
                     borderRadius: AppRadius.smBorderRadius,
                   ),
                   child: Text(
-                    '${package.durationMinutes} min',
+                    Translations.of(context)
+                        .wellnessPackages
+                        .durationMinutes(minutes: package.durationMinutes),
                     style: AppTextStyles.labelSmall.copyWith(
                       color: AppColors.primary,
                       fontWeight: FontWeight.w600,
