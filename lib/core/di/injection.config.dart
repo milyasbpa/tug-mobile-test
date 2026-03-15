@@ -53,6 +53,7 @@ import '../storage/preferences_service.dart' as _i636;
 import '../storage/secure_storage_service.dart' as _i666;
 
 const String _dev = 'dev';
+const String _test = 'test';
 const String _staging = 'staging';
 const String _production = 'production';
 
@@ -77,13 +78,13 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i131.HiveStorageService());
     gh.lazySingleton<_i636.PreferencesService>(
         () => _i636.PreferencesService());
-    gh.lazySingleton<_i107.AuthRemoteDataSource>(
-      () => const _i954.AuthRemoteDataSourceMock(),
-      registerFor: {_dev},
-    );
     gh.lazySingleton<_i320.WellnessPackageRemoteDataSource>(
       () => const _i37.WellnessPackageRemoteDataSourceMock(),
       registerFor: {_dev},
+    );
+    gh.lazySingleton<_i107.AuthRemoteDataSource>(
+      () => const _i954.AuthRemoteDataSourceMock(),
+      registerFor: {_test},
     );
     gh.factory<_i171.LocaleCubit>(
         () => _i171.LocaleCubit(gh<_i636.PreferencesService>()));
@@ -99,6 +100,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i107.AuthRemoteDataSource>(
       () => _i827.AuthRemoteDataSourceHttp(gh<_i667.DioClient>()),
       registerFor: {
+        _dev,
         _staging,
         _production,
       },

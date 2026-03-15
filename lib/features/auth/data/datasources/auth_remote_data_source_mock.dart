@@ -4,7 +4,7 @@ import 'package:flutter_starter_kit/features/auth/data/models/auth_response_mode
 import 'package:injectable/injectable.dart';
 
 /// Mock implementation of [AuthRemoteDataSource] for the **dev** environment.
-@LazySingleton(as: AuthRemoteDataSource, env: ['dev'])
+@LazySingleton(as: AuthRemoteDataSource, env: ['test'])
 class AuthRemoteDataSourceMock implements AuthRemoteDataSource {
   const AuthRemoteDataSourceMock();
 

@@ -4,7 +4,7 @@ import 'package:flutter_starter_kit/features/auth/data/models/auth_response_mode
 import 'package:injectable/injectable.dart';
 
 /// Real HTTP implementation of [AuthRemoteDataSource].
-@LazySingleton(as: AuthRemoteDataSource, env: ['staging', 'production'])
+@LazySingleton(as: AuthRemoteDataSource, env: ['dev', 'staging', 'production'])
 class AuthRemoteDataSourceHttp implements AuthRemoteDataSource {
   const AuthRemoteDataSourceHttp(this._dioClient);
 
