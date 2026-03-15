@@ -44,7 +44,7 @@ void main() {
       },
     );
 
-    test('never calls login, register, or checkAuth', () async {
+    test('never calls login or checkAuth', () async {
       when(() => mockRepository.logout())
           .thenAnswer((_) async => const Right(unit));
 
@@ -52,12 +52,6 @@ void main() {
 
       verifyNever(
         () => mockRepository.login(
-          email: any(named: 'email'),
-          password: any(named: 'password'),
-        ),
-      );
-      verifyNever(
-        () => mockRepository.register(
           email: any(named: 'email'),
           password: any(named: 'password'),
         ),

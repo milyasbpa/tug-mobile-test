@@ -23,18 +23,6 @@ class AuthRemoteDataSourceHttp implements AuthRemoteDataSource {
   }
 
   @override
-  Future<AuthResponseModel> register({
-    required String email,
-    required String password,
-  }) async {
-    final response = await _dioClient.dio.post<Map<String, dynamic>>(
-      '/api/v1/auth/register',
-      data: {'email': email, 'password': password},
-    );
-    return AuthResponseModel.fromJson(response.data!);
-  }
-
-  @override
   Future<void> logout() async {
     await _dioClient.dio.post<void>('/api/v1/auth/logout');
   }

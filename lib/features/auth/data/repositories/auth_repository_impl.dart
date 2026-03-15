@@ -44,31 +44,6 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, AuthUser>> register({
-    required String email,
-    required String password,
-  }) async {
-    try {
-      final model = await _remoteDataSource.register(
-        email: email,
-        password: password,
-      );
-      final user = AuthUser(email: email, token: model.accessToken);
-      await _localStorage.saveAccessToken(model.accessToken);
-      await _localStorage.saveRefreshToken(model.refreshToken);
-      return Right(user);
-    } on DioException catch (e) {
-      return Left(_failureFromDio(e));
-    } on UnauthorizedException catch (e) {
-      return Left(UnauthorizedFailure(e.message));
-    } on NetworkException catch (e) {
-      return Left(NetworkFailure(e.message));
-    } on ServerException catch (e) {
-      return Left(ServerFailure(e.message));
-    }
-  }
-
-  @override
   Future<Either<Failure, Unit>> logout() async {
     try {
       await _remoteDataSource.logout();

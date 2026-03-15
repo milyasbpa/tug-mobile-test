@@ -9,11 +9,6 @@ abstract class AuthRepository {
     required String password,
   });
 
-  Future<Either<Failure, AuthUser>> register({
-    required String email,
-    required String password,
-  });
-
   /// Clears all stored tokens and session data.
   Future<Either<Failure, Unit>> logout();
 

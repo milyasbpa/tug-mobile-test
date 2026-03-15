@@ -36,24 +36,6 @@ class AuthRemoteDataSourceMock implements AuthRemoteDataSource {
   }
 
   @override
-  Future<AuthResponseModel> register({
-    required String email,
-    required String password,
-  }) async {
-    await Future<void>.delayed(_fakeDelay);
-
-    if (email.isEmpty || password.isEmpty) {
-      throw const UnauthorizedException('Email and password are required.');
-    }
-
-    return AuthResponseModel(
-      accessToken: _fakeAccessToken,
-      refreshToken: _fakeRefreshToken,
-      email: email,
-    );
-  }
-
-  @override
   Future<void> logout() async {
     await Future<void>.delayed(_fakeDelay);
   }
