@@ -83,7 +83,7 @@ class TranslationsCommonEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get appName => 'Flutter Starter Kit';
+	String get appName => 'TUG Wellness';
 	String get ok => 'OK';
 	String get cancel => 'Cancel';
 	String get confirm => 'Confirm';
@@ -184,7 +184,7 @@ extension on Translations {
 			case 'auth.logoutConfirmTitle': return 'Sign Out';
 			case 'auth.logoutConfirmMessage': return 'Are you sure you want to sign out?';
 			case 'auth.devTestCredentialsHint': return 'Dev mode: tap to fill test credentials';
-			case 'common.appName': return 'Flutter Starter Kit';
+			case 'common.appName': return 'TUG Wellness';
 			case 'common.ok': return 'OK';
 			case 'common.cancel': return 'Cancel';
 			case 'common.confirm': return 'Confirm';

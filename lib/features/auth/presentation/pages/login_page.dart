@@ -70,13 +70,27 @@ class _LoginPageState extends State<LoginPage> {
       builder: (context, state) {
         final isLoading = state is AuthLoading;
         return Scaffold(
-          appBar: AppBar(title: Text(context.t.auth.loginTitle)),
+          appBar: AppBar(title: Text(context.t.common.appName)),
           body: SafeArea(
             child: Padding(
               padding: const EdgeInsets.all(AppSpacing.lg),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  const SizedBox(height: AppSpacing.xl),
+                  Text(
+                    context.t.auth.loginTitle,
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                  const SizedBox(height: AppSpacing.xs),
+                  Text(
+                    context.t.auth.loginSubtitle,
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: Theme.of(context).colorScheme.onSurfaceVariant,
+                        ),
+                  ),
                   const SizedBox(height: AppSpacing.xl),
                   AppTextField(
                     controller: _emailController,

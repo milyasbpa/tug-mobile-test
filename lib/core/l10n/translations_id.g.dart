@@ -81,7 +81,7 @@ class _TranslationsCommonId extends TranslationsCommonEn {
 	final TranslationsId _root; // ignore: unused_field
 
 	// Translations
-	@override String get appName => 'Flutter Starter Kit';
+	@override String get appName => 'TUG Wellness';
 	@override String get ok => 'OK';
 	@override String get cancel => 'Batal';
 	@override String get confirm => 'Konfirmasi';
@@ -182,7 +182,7 @@ extension on TranslationsId {
 			case 'auth.logoutConfirmTitle': return 'Keluar';
 			case 'auth.logoutConfirmMessage': return 'Apakah Anda yakin ingin keluar?';
 			case 'auth.devTestCredentialsHint': return 'Mode dev: ketuk untuk mengisi kredensial uji';
-			case 'common.appName': return 'Flutter Starter Kit';
+			case 'common.appName': return 'TUG Wellness';
 			case 'common.ok': return 'OK';
 			case 'common.cancel': return 'Batal';
 			case 'common.confirm': return 'Konfirmasi';
