@@ -1,4 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format width=80
 
 // **************************************************************************
 // InjectableConfigGenerator
@@ -25,6 +26,18 @@ import '../../features/auth/domain/usecases/login_use_case.dart' as _i37;
 import '../../features/auth/domain/usecases/logout_use_case.dart' as _i711;
 import '../../features/auth/domain/usecases/register_use_case.dart' as _i97;
 import '../../features/auth/presentation/blocs/auth_bloc.dart' as _i85;
+import '../../features/wellness_packages/data/datasources/wellness_package_remote_data_source.dart'
+    as _i320;
+import '../../features/wellness_packages/data/datasources/wellness_package_remote_data_source_http.dart'
+    as _i819;
+import '../../features/wellness_packages/data/datasources/wellness_package_remote_data_source_mock.dart'
+    as _i37;
+import '../../features/wellness_packages/data/repositories/wellness_package_repository_impl.dart'
+    as _i143;
+import '../../features/wellness_packages/domain/repositories/wellness_package_repository.dart'
+    as _i472;
+import '../../features/wellness_packages/domain/usecases/get_wellness_packages_use_case.dart'
+    as _i419;
 import '../errors/error_handler.dart' as _i433;
 import '../l10n/locale_cubit.dart' as _i171;
 import '../network/connectivity_service.dart' as _i491;
@@ -66,16 +79,16 @@ extension GetItInjectableX on _i174.GetIt {
       () => const _i954.AuthRemoteDataSourceMock(),
       registerFor: {_dev},
     );
-    gh.lazySingleton<_i744.LocalStorageService>(
-        () => _i666.SecureStorageService());
-    gh.lazySingleton<_i787.AuthRepository>(() => _i153.AuthRepositoryImpl(
-          gh<_i107.AuthRemoteDataSource>(),
-          gh<_i744.LocalStorageService>(),
-        ));
-    gh.factory<_i745.AuthInterceptor>(
-        () => _i745.AuthInterceptor(gh<_i744.LocalStorageService>()));
+    gh.lazySingleton<_i320.WellnessPackageRemoteDataSource>(
+      () => const _i37.WellnessPackageRemoteDataSourceMock(),
+      registerFor: {_dev},
+    );
     gh.factory<_i171.LocaleCubit>(
         () => _i171.LocaleCubit(gh<_i636.PreferencesService>()));
+    gh.lazySingleton<_i744.LocalStorageService>(
+        () => _i666.SecureStorageService());
+    gh.factory<_i745.AuthInterceptor>(
+        () => _i745.AuthInterceptor(gh<_i744.LocalStorageService>()));
     gh.singleton<_i667.DioClient>(() => _i667.DioClient(
           gh<_i745.AuthInterceptor>(),
           gh<_i344.LoggingInterceptor>(),
@@ -88,14 +101,31 @@ extension GetItInjectableX on _i174.GetIt {
         _production,
       },
     );
-    gh.factory<_i711.LogoutUseCase>(
-        () => _i711.LogoutUseCase(gh<_i787.AuthRepository>()));
-    gh.factory<_i97.RegisterUseCase>(
-        () => _i97.RegisterUseCase(gh<_i787.AuthRepository>()));
+    gh.lazySingleton<_i787.AuthRepository>(() => _i153.AuthRepositoryImpl(
+          gh<_i107.AuthRemoteDataSource>(),
+          gh<_i744.LocalStorageService>(),
+        ));
+    gh.lazySingleton<_i320.WellnessPackageRemoteDataSource>(
+      () => _i819.WellnessPackageRemoteDataSourceHttp(gh<_i667.DioClient>()),
+      registerFor: {
+        _staging,
+        _production,
+      },
+    );
     gh.factory<_i594.CheckAuthUseCase>(
         () => _i594.CheckAuthUseCase(gh<_i787.AuthRepository>()));
     gh.factory<_i37.LoginUseCase>(
         () => _i37.LoginUseCase(gh<_i787.AuthRepository>()));
+    gh.factory<_i711.LogoutUseCase>(
+        () => _i711.LogoutUseCase(gh<_i787.AuthRepository>()));
+    gh.factory<_i97.RegisterUseCase>(
+        () => _i97.RegisterUseCase(gh<_i787.AuthRepository>()));
+    gh.lazySingleton<_i472.WellnessPackageRepository>(() =>
+        _i143.WellnessPackageRepositoryImpl(
+            gh<_i320.WellnessPackageRemoteDataSource>()));
+    gh.factory<_i419.GetWellnessPackagesUseCase>(() =>
+        _i419.GetWellnessPackagesUseCase(
+            gh<_i472.WellnessPackageRepository>()));
     gh.singleton<_i85.AuthBloc>(() => _i85.AuthBloc(
           gh<_i37.LoginUseCase>(),
           gh<_i97.RegisterUseCase>(),
