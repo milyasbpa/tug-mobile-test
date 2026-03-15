@@ -11,4 +11,7 @@ abstract final class RouteNames {
 
   /// Register / sign-up screen.
   static const String register = '/register';
+
+  /// Wellness packages list screen.
+  static const String packages = '/packages';
 }

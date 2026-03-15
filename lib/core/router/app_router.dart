@@ -10,6 +10,7 @@ import 'package:flutter_starter_kit/features/auth/presentation/blocs/auth_event.
 import 'package:flutter_starter_kit/features/auth/presentation/blocs/auth_state.dart';
 import 'package:flutter_starter_kit/features/auth/presentation/pages/login_page.dart';
 import 'package:flutter_starter_kit/features/auth/presentation/pages/register_page.dart';
+import 'package:flutter_starter_kit/features/wellness_packages/presentation/pages/wellness_packages_page.dart';
 import 'package:go_router/go_router.dart';
 
 final GoRouter appRouter = GoRouter(
@@ -48,6 +49,13 @@ final GoRouter appRouter = GoRouter(
       pageBuilder: (context, state) => _fadeTransitionPage(
         state: state,
         child: const RegisterPage(),
+      ),
+    ),
+    GoRoute(
+      path: RouteNames.packages,
+      pageBuilder: (context, state) => _fadeTransitionPage(
+        state: state,
+        child: const WellnessPackagesPage(),
       ),
     ),
   ],
@@ -125,6 +133,12 @@ class _HomePage extends StatelessWidget {
                   const SizedBox(height: 8),
                   Text(email),
                 ],
+                const SizedBox(height: 24),
+                FilledButton.icon(
+                  onPressed: () => context.push(RouteNames.packages),
+                  icon: const Icon(Icons.spa_outlined),
+                  label: const Text('Wellness Packages'),
+                ),
               ],
             ),
           );
