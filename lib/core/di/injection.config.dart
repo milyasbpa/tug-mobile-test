@@ -24,7 +24,6 @@ import '../../features/auth/domain/repositories/auth_repository.dart' as _i787;
 import '../../features/auth/domain/usecases/check_auth_use_case.dart' as _i594;
 import '../../features/auth/domain/usecases/login_use_case.dart' as _i37;
 import '../../features/auth/domain/usecases/logout_use_case.dart' as _i711;
-import '../../features/auth/domain/usecases/register_use_case.dart' as _i97;
 import '../../features/auth/presentation/blocs/auth_bloc.dart' as _i85;
 import '../../features/wellness_packages/data/datasources/wellness_package_remote_data_source.dart'
     as _i320;
@@ -122,20 +121,17 @@ extension GetItInjectableX on _i174.GetIt {
         () => _i37.LoginUseCase(gh<_i787.AuthRepository>()));
     gh.factory<_i711.LogoutUseCase>(
         () => _i711.LogoutUseCase(gh<_i787.AuthRepository>()));
-    gh.factory<_i97.RegisterUseCase>(
-        () => _i97.RegisterUseCase(gh<_i787.AuthRepository>()));
     gh.lazySingleton<_i472.WellnessPackageRepository>(() =>
         _i143.WellnessPackageRepositoryImpl(
             gh<_i320.WellnessPackageRemoteDataSource>()));
-    gh.factory<_i419.GetWellnessPackagesUseCase>(() =>
-        _i419.GetWellnessPackagesUseCase(
-            gh<_i472.WellnessPackageRepository>()));
     gh.singleton<_i85.AuthBloc>(() => _i85.AuthBloc(
           gh<_i37.LoginUseCase>(),
-          gh<_i97.RegisterUseCase>(),
           gh<_i711.LogoutUseCase>(),
           gh<_i594.CheckAuthUseCase>(),
         ));
+    gh.factory<_i419.GetWellnessPackagesUseCase>(() =>
+        _i419.GetWellnessPackagesUseCase(
+            gh<_i472.WellnessPackageRepository>()));
     gh.factory<_i1018.WellnessPackagesBloc>(() =>
         _i1018.WellnessPackagesBloc(gh<_i419.GetWellnessPackagesUseCase>()));
     return this;

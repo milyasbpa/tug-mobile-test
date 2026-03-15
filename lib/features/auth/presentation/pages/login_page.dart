@@ -11,10 +11,6 @@ import 'package:flutter_starter_kit/shared/widgets/app_snack_bar.dart';
 import 'package:flutter_starter_kit/shared/widgets/app_text_field.dart';
 import 'package:go_router/go_router.dart';
 
-/// Login screen backed by [AuthBloc].
-///
-/// Pre-filled with mock-friendly credentials for easy starter kit demo.
-/// Remove the pre-fill and [_TestCredentialsHint] when integrating a real API.
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -62,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
     return BlocConsumer<AuthBloc, AuthState>(
       listener: (context, state) {
         if (state is AuthAuthenticated) {
-          context.go(RouteNames.home);
+          context.go(RouteNames.packages);
         } else if (state is AuthError) {
           AppSnackBar.show(
             context,
@@ -105,54 +101,12 @@ class _LoginPageState extends State<LoginPage> {
                     isFullWidth: true,
                     onPressed: _submit,
                   ),
-                  const SizedBox(height: AppSpacing.sm),
-                  AppButton(
-                    label:
-                        '${context.t.auth.dontHaveAccount} ${context.t.auth.registerLink}',
-                    variant: AppButtonVariant.text,
-                    onPressed: isLoading
-                        ? null
-                        : () => context.go(RouteNames.register),
-                  ),
-                  const SizedBox(height: AppSpacing.lg),
-                  const _TestCredentialsHint(),
                 ],
               ),
             ),
           ),
         );
       },
-    );
-  }
-}
-
-class _TestCredentialsHint extends StatelessWidget {
-  const _TestCredentialsHint();
-
-  @override
-  Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.surfaceContainerHighest,
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Dev mock — any email + any password works',
-              style: Theme.of(context).textTheme.labelSmall,
-            ),
-            const SizedBox(height: 4),
-            Text(
-              'Use password "wrong" to trigger an error state.',
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
