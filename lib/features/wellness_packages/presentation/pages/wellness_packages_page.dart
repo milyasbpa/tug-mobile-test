@@ -7,6 +7,8 @@ import 'package:flutter_starter_kit/core/l10n/translations.g.dart';
 import 'package:flutter_starter_kit/core/theme/app_colors.dart';
 import 'package:flutter_starter_kit/core/theme/app_spacing.dart';
 import 'package:flutter_starter_kit/core/theme/app_text_styles.dart';
+import 'package:flutter_starter_kit/features/auth/presentation/blocs/auth_bloc.dart';
+import 'package:flutter_starter_kit/features/auth/presentation/blocs/auth_event.dart';
 import 'package:flutter_starter_kit/features/wellness_packages/domain/entities/wellness_package.dart';
 import 'package:flutter_starter_kit/features/wellness_packages/presentation/blocs/wellness_packages_bloc.dart';
 import 'package:flutter_starter_kit/features/wellness_packages/presentation/blocs/wellness_packages_event.dart';
@@ -15,8 +17,6 @@ import 'package:flutter_starter_kit/features/wellness_packages/presentation/widg
 import 'package:flutter_starter_kit/features/wellness_packages/presentation/widgets/wellness_package_loading.dart';
 import 'package:flutter_starter_kit/features/wellness_packages/presentation/widgets/wellness_packages_empty.dart';
 import 'package:flutter_starter_kit/features/wellness_packages/presentation/widgets/wellness_packages_error.dart';
-import 'package:flutter_starter_kit/features/auth/presentation/blocs/auth_bloc.dart';
-import 'package:flutter_starter_kit/features/auth/presentation/blocs/auth_event.dart';
 import 'package:flutter_starter_kit/shared/widgets/app_loading.dart';
 
 class WellnessPackagesPage extends StatelessWidget {
